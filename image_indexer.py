@@ -11,7 +11,7 @@ class ImageIndexer:
     """
 
     # Configuration
-    EMBEDDING_MODEL = "llama3.2"
+    EMBEDDING_MODEL = "llama3.3"
     DESCRIPTION_MODEL = "llava:34b"
     IMAGES_DIRECTORY = 'image-search/images/'
 
@@ -88,7 +88,7 @@ class ImageIndexer:
                     'images': [image_path]
                 }
             ],
-            options={'temperature': 0}
+            options={'temperature': 0} #Eliminate randomness for consistency
         )
 
         return response['message']['content']
